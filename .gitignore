@@ -1,3 +1,4 @@
 denv
 *.xlsx
 *.ods
+self-stats/data

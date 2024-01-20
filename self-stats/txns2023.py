@@ -8,7 +8,7 @@ import sqlite3
 # Get list of months tracked
 
 # load the workbook
-wb = load_workbook(filename ='fin.xlsx',data_only=True)
+wb = load_workbook(filename ='data/fin.xlsx',data_only=True)
 
 #initialize sheet
 month_sheets = list()
