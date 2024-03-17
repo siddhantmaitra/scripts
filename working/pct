@@ -1,0 +1,14 @@
+#!/bin/env bash
+
+
+checktemp(){
+
+    temperature_output=$(paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/')
+
+    # Print the temperature output
+    echo "Temperature of Computer:"
+    echo "$temperature_output"
+
+}
+
+checktemp
