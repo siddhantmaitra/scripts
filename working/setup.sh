@@ -64,6 +64,7 @@ git clone "https://github.com/$USERNAME/device-setup.git" ~/.config/device-setup
 cd ~/.config/device-setup
 # Run ansible playbook
 print_info "Running ansible playbook..."
+ansible-galaxy install -r requirements.yml
 ansible-playbook -v playbook.yml --ask-become-pass
 
 # Change the remote URL to SSH based URL
