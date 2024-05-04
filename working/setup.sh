@@ -35,7 +35,7 @@ check_and_install() {
         fi
     done
 }
-
+check_and_install ansible chezmoi figlet cowsay
 figlet -ct " Archbox Setup Script" 
 if [ -t 0 ]; then
     # Script is being run interactively
@@ -47,7 +47,7 @@ else
     read -r USERNAME </dev/tty
 fi
 
-check_and_install ansible chezmoi figlet cowsay
+
 
 # Run chezmoi init
 print_info "Running chezmoi init..."
