@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR="/home/sid/programs/practice/exercism"
+DIR="/home/sid/Wrk/projects/practice/exercism"
 
 cd $DIR
 

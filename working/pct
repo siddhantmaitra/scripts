@@ -1,5 +1,29 @@
 #!/bin/env bash
 
+set -eu
+
+ 
+interval=0
+
+while getopts ":u:" opt; do
+    case "$opt" in
+        u)
+            if [ "$OPTARG" -eq "$OPTARG" ] 2>/dev/null; then
+                interval="$OPTARG"
+            else
+                echo "Error: -u requires a valid number."
+                exit 1
+            fi
+            ;;
+        \?)
+            echo "Usage: $0 [-u interval]"
+            exit 1
+            ;;
+    esac
+done
+
+# Shift to remove processed options from arguments
+shift "$((OPTIND - 1))"
 
 checktemp(){
 
@@ -10,5 +34,11 @@ checktemp(){
     echo "$temperature_output"
 
 }
+export -f checktemp
 
-checktemp
+
+if [ "$interval" -gt 0 ]; then
+    watch -n "$interval" checktemp
+else
+    checktemp
+fi
