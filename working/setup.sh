@@ -35,15 +35,14 @@ check_and_install() {
         fi
     done
 }
-check_and_install ansible chezmoi figlet cowsay
+check_and_install ansible chezmoi figlet
 figlet -ct " Archbox Setup Script" 
+echo "Please enter your GitHub username:"
 if [ -t 0 ]; then
     # Script is being run interactively
-    echo "Please enter your GitHub username:"
     read -r USERNAME
 else
     # Script is being run non-interactively
-    echo "Please enter your GitHub username:"
     read -r USERNAME </dev/tty
 fi
 
