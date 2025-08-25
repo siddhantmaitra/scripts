@@ -51,10 +51,10 @@ init_webcam(){
      -A "Yes"; then
      
    printf "INIT VERTICAL  MODE"
-   scrcpy --video-source=camera --camera-size=1920x1080 --camera-facing=front --v4l2-sink=$DEVICE_PATH  --no-audio-playback --display-orientation=flip90
+   scrcpy --video-source=camera --camera-size=1920x1080 --camera-facing=front --v4l2-sink=$DEVICE_PATH  --no-playback --display-orientation=flip90
  else
    printf "INIT HORIZONTAL MODE"
-   scrcpy --video-source=camera --camera-size=1920x1080 --camera-facing=front --v4l2-sink=$DEVICE_PATH  --no-audio-playback --display-orientation=flip0
+   scrcpy --video-source=camera --camera-size=1920x1080 --camera-facing=front --v4l2-sink=$DEVICE_PATH  --no-playback --display-orientation=flip0
 
  fi
 }
