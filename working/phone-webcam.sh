@@ -59,7 +59,7 @@ init_webcam(){
  fi
 }
 
-VALUE=$(notify-send -u "critical" -a "$TITLE" "Setup phone as webcam?" -A "Yes" -A "No")
+VALUE=$(notify-send -t 10000 -a "$TITLE" "Setup phone as webcam?" -A "Yes" -A "No")
 
 if [ $VALUE -eq 0 ]; then
   check_install libnotify android-tools v4l2loopback-dkms scrcpy
